@@ -1,0 +1,16 @@
+
+<h1>Contact List</h1>
+
+<p><i>Choose contact:</i></p>
+
+<ul class="list-group">
+    <li *ngFor='let contact of contacts' class="list-group-item"
+        [class.active]="contact === selectedContact"
+        (click)="selectContact(contact)"
+    >
+
+    <span class="badge">{{contact.id}}</span> {{contact.name}} {{contact.family}}
+    </li>
+</ul>
+
+<contact-detail *ngIf="selectedContact" [contact]="selectedContact"></contact-detail>
